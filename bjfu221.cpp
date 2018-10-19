@@ -80,10 +80,14 @@ int main(int argc, const char * argv[]) {
     if (lis.next!=0) {
         int n;
         scanf("%d",&n);
-        Book insert;
-        getBook(insert);
-        insertBook(lis, n, insert);
-        showBook(&lis);
+        if(n>=1&&n<=count+1){
+            Book insert;
+            getBook(insert);
+            insertBook(lis, n, insert);
+            showBook(&lis);
+        } else{
+            printf("Sorry，the position to be inserted is invalid!\n");
+        }
     }
     return 0;
 }

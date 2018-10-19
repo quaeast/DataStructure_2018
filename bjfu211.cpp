@@ -97,8 +97,12 @@ int main() {
     int pos;
     Book tar;
     scanf("%d", &pos);
-    scanf("%s%s%f", tar.isbn, tar.name, &tar.price);
-    InsertList(pos-1, tar, lib);
-    ShowList(lib);
+    if(pos>=1&&pos<lib.length+1){
+        scanf("%s%s%f", tar.isbn, tar.name, &tar.price);
+        InsertList(pos-1, tar, lib);
+        ShowList(lib);
+    } else{
+        printf("Sorry，the position to be inserted is invalid!\n");
+    }
     return 0;
 }

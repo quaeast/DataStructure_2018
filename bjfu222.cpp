@@ -91,8 +91,12 @@ int main(int argc, const char * argv[]) {
     if (lis.next!=0) {
         int n;
         scanf("%d",&n);
-        deleteBook(lis, n);
-        showBook(&lis);
+        if(n>=1&&n<=count){
+            deleteBook(lis, n);
+            showBook(&lis);
+        } else{
+            printf("Sorry，the position to be deleted is invalid!\n");
+        }
     }
     return 0;
 }

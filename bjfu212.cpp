@@ -103,7 +103,11 @@ int main() {
     }
     int pos;
     scanf("%d", &pos);
-    DeleteBook(pos-1, lib);
-    ShowList(lib);
+    if(pos>=1&&pos<=lib.length){
+        DeleteBook(pos-1, lib);
+        ShowList(lib);
+    } else{
+        printf("Sorry，the position to be deleted is invalid!\n");
+    }
     return 0;
 }
