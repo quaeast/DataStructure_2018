@@ -19,15 +19,15 @@ void initSq(SqList &L, int n){
 };
 
 void deleteN(SqList &L, int n){
+    int deleteCount=0;
     for (int i = 0; i < L.length; ++i) {
         if(L.data[i]==n){
-            --L.length;
-            for (int j = i; j < L.length; ++j) {
-                L.data[j]=L.data[j+1];
-            }
-            i--;
+            deleteCount++;
+        } else{
+            L.data[i-deleteCount]=L.data[i];
         }
     }
+    L.length-=deleteCount;
 }
 
 void showSq(SqList &L){
